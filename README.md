@@ -9,7 +9,7 @@ Socialmedia Webpage made with:
 
 ## Demo
 
-Demo avialable at Demo[http://socialmedia-mt.cba.pl/]
+Demo avialable at [Demo](http://socialmedia-mt.cba.pl/)
 
 ## Features
 

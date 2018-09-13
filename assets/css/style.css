@@ -1,0 +1,502 @@
+@font-face {
+   font-family: 'Kalam-Bold';
+   src: url('../fonts/Kalam-Bold.ttf');
+}
+
+@font-face {
+   font-family: 'Kalam-Light';
+   src: url('../fonts/Kalam-Light.ttf');
+}
+
+/* Turn off horizontal scrollbar - it is on profile page(small devices) when sidebar is open  */
+body {
+   background-color: #e8e8e8;
+   overflow-x: hidden;
+}
+
+.navbar .navbar-brand {
+   text-shadow: 2px 2px 2px rgb(153, 207, 235);
+   color: #fff;
+   font-family: 'Kalam-Bold', sans-serif;
+   font-size: 2rem;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   text-decoration: none;
+}
+
+.navbar {
+   border-bottom: 4px solid rgb(0, 106, 241);
+   box-shadow: 0px 4px 3px 0px rgba(173, 173, 255, 1);
+}
+
+.navbar-brand:hover {
+   color: #fff !important;
+}
+
+/* sections - move down from navbar */
+.content-section {
+   position: relative;
+   top: 80px;
+}
+
+
+.section {
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 2px 2px 1px #d3d3d3;
+   width: 100%;
+   margin: 0px;
+   margin-bottom: 15px;
+}
+
+/* main avatar */
+.user-details-section img {
+   max-width: 125px;
+   border-radius: 5px;
+}
+
+.user-details-section a {
+   text-decoration: none;
+}
+
+/* 'post' button on index.php */
+.wall-posts-section input[type="submit"] {
+   width: 90px;
+   font-family: 'Kalam-Light', sans-serif;
+   font-size: 1.2rem;
+}
+
+/* class of all posts - (and cards) */
+.status-post {
+   box-shadow: 0px 2px 6px #d3d3d3;
+   padding: 0px;
+   margin-bottom: 15px;
+}
+
+.status-post .card-body,
+.status-post .card-footer {
+   padding: 10px;
+}
+
+.status-post img {
+   max-width: 70px;
+   max-height: 70px;
+   border-radius: 4px;
+}
+
+.status-post a,
+.comment-section a {
+   text-decoration: none;
+}
+
+/* comment form in comments iframe */
+#comment-form textarea,
+#comment-form input,
+.comment-section {
+   font-size: 0.75rem !important;
+}
+
+#comment-form input {
+   font-family: 'Kalam-Light', sans-serif
+}
+
+.text-comments {
+   cursor: pointer;
+}
+
+.iframe-likes {
+   border: none;
+   max-height: 1.75rem;
+   overflow: hidden;
+   transform: rotate(0.00001deg);
+   width: 100%;
+}
+
+.iframe-body {
+   overflow: hidden;
+   background-color: #fff;
+}
+
+/* container for iframe with like button */
+.comment-like-container {
+   background-color: #fff;
+   box-shadow: 0px;
+   padding: 0px;
+   margin: 0px;
+   color: #007bff;
+   width: 180px;
+}
+
+.comment-like-button {
+   border: none;
+   color: white;
+   background-color: #007bff;
+   border-radius: 4px;
+   margin: 0px 5px 0px 0px;
+   padding: 1px 6px;
+   /* font-family: 'Kalam-Light', sans-serif; commented beacuse of performance - lot less requests!*/
+   cursor: pointer;
+}
+
+/* profile page */
+#profile-wrapper {
+   position: absolute !important;
+   top: 65px;
+   left: 180px;
+   width: 100%;
+   transition: 0.6s;
+}
+
+#profile-wrapper.hidden {
+   left: 0px;
+   transition: 0.6s;
+}
+
+#profile-sidebar {
+   position: fixed;
+   left: 0px;
+   width: 180px;
+   height: calc(100vh - 65px);
+   background-color: rgb(0, 123, 255);
+   box-shadow: 4px 0px 3px 0px rgba(173, 173, 255, 1);
+   transition: 0.6s;
+   z-index: 10;
+}
+
+#profile-sidebar img {
+   border: 3px solid white;
+}
+
+#profile-sidebar #profile-sidebar-content {
+   color: white;
+   font-family: 'Kalam-Light', sans-serif;
+   width: auto;
+}
+
+#profile-sidebar.sidebar-hidden {
+   left: -180px;
+   transition: 0.6s;
+}
+
+#collapse-btn {
+   display: block;
+   background-color: rgb(0, 123, 255);
+   border: 1px solid #fff;
+   border-radius: 3px;
+   position: fixed;
+   top: 65px;
+   left: 185px;
+   /* box-shadow: 4px 0px 3px 0px rgba(173,173,255,1); */
+   transition: 0.6s;
+   z-index: 10;
+   opacity: 0.5;
+}
+
+#collapse-btn.hidden {
+   left: 5px;
+   transition: 0.6s;
+}
+
+#collapse-btn .fas {
+   color: #fff;
+}
+
+#collapse-btn:focus {
+   outline: none;
+}
+
+.friend-request img {
+   max-height: 100px;
+   max-width: 100px;
+}
+
+#profile-content {
+   margin-top: 15px;
+}
+
+.btn-deepblue {
+   background-color: #0057b5;
+   border-color: #0057b5;
+   color: white;
+}
+
+.btn-deepblue:hover {
+   background-color: #00438a;
+   border-color: #00438a;
+}
+
+/* media for side bar on profile page */
+@media (min-width: 768px) {
+   #collapse-btn {
+      display: none;
+   }
+
+   #profile-wrapper {
+      left: auto;
+   }
+
+   #profile-sidebar.sidebar-hidden {
+      left: 0px;
+      transition: 0.6s;
+   }
+}
+
+/* window with messages (i.e. chat) */
+#loaded-messages {
+   min-height: 300px;
+   max-height: 600px;
+   height: 100%;
+   margin-bottom: 10px;
+   overflow-y: scroll;
+}
+
+.message-container-user-1 {
+   display: flex;
+   justify-content: flex-start;
+}
+
+.message-container-user-2 {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.message {
+   border-radius: 8px;
+   padding: 5px 10px;
+   display: inline-block;
+   margin: 6px 0px;
+}
+
+.message-user1 {
+   justify-self: start;
+   background-color: rgb(0, 123, 255);
+   border: none;
+   color: white;
+}
+
+.message-user2 {
+   justify-self: end;
+   background-color: rgb(121, 137, 155);
+}
+
+
+
+.user-found-messages span {
+   display: block;
+}
+
+.user-found-messages p {
+   color: black;
+}
+
+.user-found-messages .card-text {
+   padding: 4px;
+}
+
+.user-found-messages:hover {
+   background-color: rgb(216, 216, 216);
+}
+
+#loaded-conversations a {
+   text-decoration: none;
+}
+
+#conversations {
+   padding: 4px;
+}
+
+/* Time of post is below or on the right side */
+@media (max-width: 768px) {
+   .user-found-messages span {
+      display: inline-block;
+   }
+}
+
+.resultDisplay:hover {
+   background-color: rgb(216, 216, 216);
+}
+
+.resultDisplay a {
+   text-decoration: none;
+}
+
+.resultDisplay img {
+   margin-right: 5px;
+   margin-left: 3px;
+   margin-top: 3px;
+   max-width: 60px;
+   border-radius: 40px;
+   float: left;
+}
+
+.resultDisplay .card-body {
+   padding: 0px;
+}
+
+.resultDisplay p {
+   margin-bottom: 0px;
+}
+
+.resultDisplay.resultDisplay-search img {
+   border-radius: 5px;
+   max-width: 90px;
+}
+
+.resultDisplay.resultDisplay-search  {
+   margin-bottom: 5px;
+}
+
+.resultDisplay.resultDisplay-search input[type="submit"]  {
+   float: right;
+}
+
+.resultDisplay.resultDisplay-search button  {
+   float: right;
+}
+
+
+
+.section.tabs-section {
+   border-radius: 0px 0px 5px 5px;
+   border: 1px solid;
+   border-color: #cacaca;
+   border-top: none;
+}
+
+#profile-content .nav-tabs a {
+   border-color: #cacaca #cacaca #fff;
+}
+
+a.nav-link.dropdown-toggle.d-flex::after {
+   align-self: center;
+}
+
+/* Latest messages - after click on envelope */
+.dropdown-menu .card {
+   min-width: 15rem;
+   font-size: 14px;
+   padding: 2px;
+   
+   
+}
+
+.dropdown-menu {
+   position: absolute;
+   left: -50px;
+   overflow-y: scroll;
+   max-height: 250px;
+}
+
+.dropdown-menu .card .card-text {
+   margin: 0;
+   padding: 0;
+}
+
+.dropdown-menu img {
+   max-width: 40px;
+}
+
+.dropdown-menu a {
+   text-decoration: none;
+}
+
+.dropdown-menu>p {
+   text-align: center;
+   padding: 5px 0px;
+   margin: 0px;
+}
+
+.dropdown-menu span {
+   display: inline-block;
+}
+
+.dropdown-menu small {
+   margin-left: 5px;
+   font-size: 0.8em;
+}
+
+/* unread message */
+.message-unopened,
+.notification-unopened {
+   background-color: rgb(128, 204, 248);
+}
+
+#unread-messages,
+#unread-notifications,
+#unaswered-requests {
+   position: absolute;
+   background-color: red;
+   top: 0px;
+   right: 0px;
+}
+
+@media (max-width: 767px) {
+
+   #unread-messages,
+   #unread-notifications,
+   #unaswered-requests {
+      left: 25px;
+      right: auto;
+   }
+}
+
+/* arrow to open messages */
+a.nav-link.dropdown-toggle.d-flex::after {
+   display: none;
+}
+
+/* Number of unseen messages */
+.nav-link span {
+   line-height: 14px;
+}
+
+
+/* Search user dropdown style (+ resultDisplay class) */
+#search-results {
+   width: 100%;
+   top: 0px;
+   left: 0px;
+   padding: 0px; 
+}
+
+#search-results .card {
+   margin: 0px;
+   padding-left: 8px;
+}
+
+#search-results-footer{
+   color: white;
+   background-color: #007bff;
+   text-align: center;
+}
+#search-results-footer a {
+   color: white;
+   text-decoration: none;
+   display: inline-block;
+   width: 100%;
+}
+
+#search-results-footer a:hover {
+   color: #7db4ee;
+}
+
+#search-results-footer .empty {
+   display: none;
+}
+
+
+@media (min-width: 768px) {
+   #search-results {
+      min-width: 330px;
+   }
+   #form-search-container {
+      max-width: 350px;
+   }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+   #profile-content {
+      margin-left: 180px;
+      width: calc(1170px - 180px);
+   }
+}

@@ -1,0 +1,50 @@
+@font-face {
+   font-family: 'Kalam-Light';
+   src: url('../fonts/Kalam-Light.ttf');
+}
+@font-face {
+   font-family: 'Kalam-Bold';
+   src: url('../fonts/Kalam-Bold.ttf');
+}
+
+body {
+   height: auto;
+}
+
+.wrapper {
+   background: url('../images/background/desk-top-view-2.jpg');
+   background-size: cover;
+   height: 100vh;
+   width: 100%;
+   position: absolute;
+   top: 0px;
+}
+
+.login-box {
+   background-color: rgb(219, 219, 219);
+   font-family: 'Kalam-Light', sans-serif;
+   border-radius: 10px;
+   opacity: 0.93;
+   border: none;
+}
+
+.login-header {
+   font-family: 'Kalam-Bold', sans-serif;
+   border-radius:  7px !important;
+   color: white;
+   width: 100%;
+
+}
+
+.login-header h1 {
+   text-shadow: 5px 4px 7px rgb(13, 71, 101);
+   color: #0c5380;
+}
+
+a {
+   text-decoration: none;
+}
+
+#signup-section {
+   display: none;
+}
