@@ -10,6 +10,9 @@ Socialmedia Webpage made with:
 ## Demo
 
 Demo avialable at [Demo](http://socialmedia-mt.cba.pl/)
+If you don't want to register can use:
+  email: stefan.bocian@test.com
+  password: 123456
 
 ## Features
 
